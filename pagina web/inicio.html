@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dispensador Inteligente | Inicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primaryNavy: '#1d4ed8',
+                        navyText: '#1e293b',
+                        sandBg: '#f8fafc',
+                        borderSubtle: '#e2e8f0',
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-sandBg text-slate-600 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full z-40 bg-white/90 backdrop-blur-md border-b border-borderSubtle">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="inicio.html" class="text-xl font-semibold tracking-wide text-navyText uppercase flex items-center gap-2">
+                <span class="w-2.5 h-2.5 bg-primaryNavy rounded-full"></span> Dyspo
+            </a>
+            <button id="menu-btn" aria-label="Abrir menú" class="text-primaryNavy text-xl focus:outline-none z-50 bg-blue-50 hover:bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- SLIDE-OUT MENU -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-slate-900/30 z-50 opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-sm"></div>
+    <div id="mobile-menu" class="fixed top-0 right-0 w-80 h-full bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-8">
+        <div class="flex items-center justify-between pb-6 border-b border-borderSubtle">
+            <span class="text-lg font-semibold tracking-wide text-navyText uppercase flex items-center gap-2">
+                <span class="w-2 h-2 bg-primaryNavy rounded-full"></span> Menú
+            </span>
+            <button id="menu-close" aria-label="Cerrar menú" class="text-slate-400 hover:text-primaryNavy text-xl focus:outline-none">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-6 mt-8 text-base font-normal">
+            <a href="inicio.html" class="text-primaryNavy font-medium hover:translate-x-1 transition-transform flex items-center gap-3">
+                <i class="fa-solid fa-house text-xs"></i> Inicio
+            </a>
+            <a href="producto.html" class="text-slate-500 hover:text-primaryNavy hover:translate-x-1 transition-transform flex items-center gap-3">
+                <i class="fa-solid fa-box-open text-xs"></i> Producto
+            </a>
+            <a href="galeria.html" class="text-slate-500 hover:text-primaryNavy hover:translate-x-1 transition-transform flex items-center gap-3">
+                <i class="fa-solid fa-images text-xs"></i> Galería
+            </a>
+        </nav>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="pt-36 pb-20 px-6 max-w-4xl mx-auto flex-1 w-full space-y-10">
+        
+        <!-- BLOQUE PRINCIPAL -->
+        <div class="bg-white rounded-3xl p-8 md:p-14 shadow-sm border border-borderSubtle space-y-10 text-center relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-600 to-cyan-500"></div>
+            
+            <div class="space-y-3">
+                <span class="text-xs font-medium tracking-wider text-primaryNavy uppercase bg-blue-50 px-3 py-1.5 rounded-md">Sistema Doméstico Inteligente</span>
+                <h1 class="text-3xl md:text-4xl font-semibold text-navyText tracking-tight">Dispensador de agua caliente accesible</h1>
+            </div>
+
+            <div class="space-y-8 text-left max-w-2xl mx-auto">
+                <div class="space-y-2">
+                    <h2 class="text-xl font-semibold text-navyText flex items-center gap-2">
+                        <span class="w-1.5 h-5 bg-primaryNavy rounded-full"></span> ¿Qué estamos haciendo?
+                    </h2>
+                    <p class="text-slate-500 text-base leading-relaxed">
+                        Estamos desarrollando un dispensador de agua caliente automatizado e inteligente, diseñado para facilitar la preparación de bebidas de forma segura, rápida y completamente libre de esfuerzo físico pesado.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h2 class="text-xl font-semibold text-navyText flex items-center gap-2">
+                        <span class="w-1.5 h-5 bg-primaryNavy rounded-full"></span> ¿Para quién es?
+                    </h2>
+                    <p class="text-slate-500 text-base leading-relaxed">
+                        Este proyecto está enfocado principalmente en <strong class="text-navyText font-medium">personas con artritis reumatoide y movilidad reducida</strong> en las manos y muñecas, ayudándoles a recuperar su independencia cotidiana y evitando riesgos de quemaduras o dolores al manipular jarras pesadas.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOQUE DE CONCIENTIZACIÓN MÉDICA CON IMÁGENES -->
+        <div class="bg-white rounded-3xl p-8 md:p-14 shadow-sm border border-borderSubtle space-y-10">
+            <div class="space-y-2 text-center max-w-xl mx-auto">
+                <span class="text-xs font-medium tracking-wider text-primaryNavy uppercase bg-blue-50 px-3 py-1.5 rounded-md">Conciencia y Realidad</span>
+                <h2 class="text-2xl font-semibold text-navyText">El impacto de la Artritis Reumatoide en el día a día</h2>
+                <p class="text-slate-500 text-sm">Comprender la enfermedad es el primer paso para diseñar soluciones verdaderamente empáticas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+                <!-- Tarjeta 1 con espacio para imagen -->
+                <div class="bg-sandBg rounded-2xl border border-borderSubtle overflow-hidden flex flex-col justify-between">
+                    <div class="h-48 w-full bg-slate-900 flex items-center justify-center p-2">
+                        <img src="enfermedad1.jpeg" alt="Rigidez matutina y dolor articulatorio" class="max-w-full max-h-full object-cover rounded-lg">
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="flex items-center gap-2 text-primaryNavy font-semibold text-sm">
+                            <i class="fa-solid fa-sun"></i> Rigidez Matutina y Dolor
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed">
+                            El despertar es el momento más duro. Los pacientes experimentan las manos entumecidas y rígidas, con un dolor punzante en articulaciones que dificulta realizar movimientos básicos durante las primeras horas del día.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2 con espacio para imagen -->
+                <div class="bg-sandBg rounded-2xl border border-borderSubtle overflow-hidden flex flex-col justify-between">
+                    <div class="h-48 w-full bg-slate-900 flex items-center justify-center p-2">
+                        <img src="enfermedad2.jpeg" alt="Autonomía e independencia en el hogar" class="max-w-full max-h-full object-cover rounded-lg">
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <div class="flex items-center gap-2 text-primaryNavy font-semibold text-sm">
+                            <i class="fa-solid fa-shield-heart"></i> Independencia y Autonomía
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed">
+                            Tareas cotidianas como levantar una taza de café o servir agua caliente de una tetera tradicional se convierten en un riesgo físico constante y en una fuente de frustración por la dependencia de terceros.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-borderSubtle pt-6 text-center">
+                <p class="text-slate-500 text-sm leading-relaxed max-w-xl mx-auto italic">
+                    "Nuestro objetivo no es solo crear un electrodoméstico, sino devolver la confianza, la seguridad y la autonomía a quienes enfrentan este reto diario."
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-6 text-xs text-slate-400 border-t border-borderSubtle bg-white">
+        &copy; 2026 - Proyecto de Diseño Industrial | UACJ
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        function toggleMenu() {
+            const isOpen = mobileMenu.classList.contains('translate-x-full');
+            if (isOpen) {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none');
+            }
+        }
+        menuBtn.addEventListener('click', toggleMenu);
+        menuClose.addEventListener('click', toggleMenu);
+        mobileMenuOverlay.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>

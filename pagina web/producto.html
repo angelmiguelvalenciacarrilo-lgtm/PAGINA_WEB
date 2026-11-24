@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dispensador Inteligente | Producto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primaryNavy: '#1d4ed8',
+                        navyText: '#1e293b',
+                        sandBg: '#f8fafc',
+                        borderSubtle: '#e2e8f0',
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-sandBg text-slate-600 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full z-40 bg-white/90 backdrop-blur-md border-b border-borderSubtle">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="inicio.html" class="text-xl font-semibold tracking-wide text-navyText uppercase flex items-center gap-2">
+                <span class="w-2.5 h-2.5 bg-primaryNavy rounded-full"></span> Dyspo
+            </a>
+            <button id="menu-btn" aria-label="Abrir menú" class="text-primaryNavy text-xl focus:outline-none z-50 bg-blue-50 hover:bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- SLIDE-OUT MENU -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-slate-900/30 z-50 opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-sm"></div>
+    <div id="mobile-menu" class="fixed top-0 right-0 w-80 h-full bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-8">
+        <div class="flex items-center justify-between pb-6 border-b border-borderSubtle">
+            <span class="text-lg font-semibold tracking-wide text-navyText uppercase flex items-center gap-2">
+                <span class="w-2 h-2 bg-primaryNavy rounded-full"></span> Menú
+            </span>
+            <button id="menu-close" aria-label="Cerrar menú" class="text-slate-400 hover:text-primaryNavy text-xl focus:outline-none">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-6 mt-8 text-base font-normal">
+            <a href="inicio.html" class="text-slate-500 hover:text-primaryNavy hover:translate-x-1 transition-transform flex items-center gap-3">
+                <i class="fa-solid fa-house text-xs"></i> Inicio
+            </a>
+            <a href="producto.html" class="text-primaryNavy font-medium hover:translate-x-1 transition-transform flex items-center gap-3">
+                <i class="fa-solid fa-box-open text-xs"></i> Producto
+            </a>
+            <a href="galeria.html" class="text-slate-500 hover:text-primaryNavy hover:translate-x-1 transition-transform flex items-center gap-3">
+                <i class="fa-solid fa-images text-xs"></i> Galería
+            </a>
+        </nav>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="pt-36 pb-20 px-6 max-w-4xl mx-auto flex-1 w-full space-y-8">
+        
+        <!-- ENFOQUE GENERAL -->
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-borderSubtle space-y-6 relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-600 to-cyan-500"></div>
+            
+            <span class="text-xs font-medium tracking-wider text-primaryNavy uppercase bg-blue-50 px-3 py-1.5 rounded-md">Detalles del Producto</span>
+            <h1 class="text-2xl md:text-3xl font-semibold text-navyText">Enfoque y Características Generales</h1>
+            <p class="text-slate-500 text-sm md:text-base leading-relaxed">
+                El dispensador de agua caliente elimina por completo la necesidad de cargar jarras pesadas, aplicar fuerza excesiva en las muñecas o lidiar con tapas difíciles, ofreciendo una experiencia sumamente amigable y accesible.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                <div class="bg-sandBg p-6 rounded-2xl border border-borderSubtle space-y-3">
+                    <h3 class="text-base font-semibold text-navyText">Interacción Física Adaptada</h3>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-xs text-primaryNavy"></i> Mecánica de dispensado sin esfuerzo físico.</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-xs text-primaryNavy"></i> Tapa magnética de apertura simple.</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-xs text-primaryNavy"></i> Base antideslizante y aislamiento térmico.</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-xs text-primaryNavy"></i> Confirmación mediante avisos sonoros.</li>
+                    </ul>
+                </div>
+                <div class="bg-sandBg p-6 rounded-2xl border border-borderSubtle space-y-3">
+                    <h3 class="text-base font-semibold text-navyText">Gestión Automatizada</h3>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-xs text-primaryNavy"></i> Activación digital mediante botones táctiles.</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-xs text-primaryNavy"></i> Comandos de voz para días de brotes de dolor.</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-xs text-primaryNavy"></i> Ajuste automático de temperatura.</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-xs text-primaryNavy"></i> Calentamiento rápido y apagado automático.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ESPECIFICACIONES FÍSICAS Y TÉCNICAS CON IMÁGENES DEL MODELO -->
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-borderSubtle space-y-8">
+            <div class="space-y-2">
+                <span class="text-xs font-medium tracking-wider text-primaryNavy uppercase bg-blue-50 px-3 py-1.5 rounded-md">Ingeniería y Volumen</span>
+                <h2 class="text-xl font-semibold text-navyText">Dimensiones y Propiedades Físicas</h2>
+                <p class="text-slate-500 text-sm md:text-base leading-relaxed">
+                    El diseño volumétrico ha sido optimizado para ocupar un espacio mínimo en la encimera de la cocina, garantizando estabilidad estructural y una ergonomía visual impecable.
+                </p>
+            </div>
+
+            <!-- Contenedor de Imágenes del Modelo 3D / CAD -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-sandBg rounded-2xl border border-borderSubtle overflow-hidden flex flex-col justify-between">
+                    <div class="h-64 w-full bg-slate-900 flex items-center justify-center p-2">
+                        <img src="modelocad1.jpeg" alt="Modelo CAD / Vista frontal del dispensador" class="max-w-full max-h-full object-contain rounded-lg">
+                    </div>
+                    <div class="p-4 text-center">
+                        <span class="text-xs text-slate-400 font-medium">Modelo 3D: Vista isométrica y frontal</span>
+                    </div>
+                </div>
+                <div class="bg-sandBg rounded-2xl border border-borderSubtle overflow-hidden flex flex-col justify-between">
+                    <div class="h-64 w-full bg-slate-900 flex items-center justify-center p-2">
+                        <img src="modelocad2.jpeg" alt="Modelo CAD / Detalles técnicos y despiece" class="max-w-full max-h-full object-contain rounded-lg">
+                    </div>
+                    <div class="p-4 text-center">
+                        <span class="text-xs text-slate-400 font-medium">Modelo 3D: Distribución de componentes</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjetas de Medidas -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-2">
+                <div class="bg-sandBg p-5 rounded-2xl border border-borderSubtle text-center space-y-1">
+                    <span class="text-xs text-slate-400 font-medium uppercase">Altura</span>
+                    <p class="text-lg font-semibold text-navyText">30 cm</p>
+                </div>
+                <div class="bg-sandBg p-5 rounded-2xl border border-borderSubtle text-center space-y-1">
+                    <span class="text-xs text-slate-400 font-medium uppercase">Ancho</span>
+                    <p class="text-lg font-semibold text-navyText">10 cm</p>
+                </div>
+                <div class="bg-sandBg p-5 rounded-2xl border border-borderSubtle text-center space-y-1">
+                    <span class="text-xs text-slate-400 font-medium uppercase">Profundidad</span>
+                    <p class="text-lg font-semibold text-navyText">20 cm</p>
+                </div>
+                <div class="bg-sandBg p-5 rounded-2xl border border-borderSubtle text-center space-y-1">
+                    <span class="text-xs text-slate-400 font-medium uppercase">Boquilla</span>
+                    <p class="text-lg font-semibold text-navyText">1 cm Ø</p>
+                </div>
+            </div>
+
+            <div class="bg-blue-50/50 p-5 rounded-2xl border border-blue-100 flex items-start gap-4">
+                <div class="text-primaryNavy text-xl mt-0.5"><i class="fa-solid fa-cube"></i></div>
+                <div class="space-y-1">
+                    <h3 class="text-sm font-semibold text-navyText">Material de Fabricación: PLA</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        La carcasa principal estáfabricada mediante modelado e impresión 3D en ácido poliláctico (PLA), un polímero termoplástico rígido de alta calidad, sostenible y con excelente acabado superficial texturizado.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FUNCIONALIDADES Y COMPLEMENTOS -->
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-borderSubtle space-y-4">
+            <h2 class="text-xl font-semibold text-navyText flex items-center gap-2">
+                <span class="w-1.5 h-5 bg-primaryNavy rounded-full"></span> Funcionalidades y Complementos del Sistema
+            </h2>
+            <p class="text-slate-500 text-sm md:text-base leading-relaxed">
+                Para asegurar una experiencia óptima, el dispositivo contempla elementos esenciales como la seguridad térmica y un sistema de calentamiento rápido que resultan indispensables en el uso diario. Adicionalmente, se integran de forma natural opciones complementarias como el control exacto de temperatura y una taza ajustable que se adapta a diversos tamaños de recipientes.
+            </p>
+            <p class="text-slate-500 text-sm md:text-base leading-relaxed">
+                Pensando en una experiencia superior, el diseño también contempla comodidades avanzadas opcionales como la integración con una aplicación móvil, iluminación nocturna en el área de servido, un dosificador automático para porciones exactas, filtrado de agua integrado y conexión directa a la toma de agua principal.
+            </p>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-6 text-xs text-slate-400 border-t border-borderSubtle bg-white">
+        &copy; 2026 - Proyecto de Diseño Industrial | UACJ
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        function toggleMenu() {
+            const isOpen = mobileMenu.classList.contains('translate-x-full');
+            if (isOpen) {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none');
+            }
+        }
+        menuBtn.addEventListener('click', toggleMenu);
+        menuClose.addEventListener('click', toggleMenu);
+        mobileMenuOverlay.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>

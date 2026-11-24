@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dispensador Inteligente | Galería</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primaryNavy: '#1d4ed8',
+                        navyText: '#1e293b',
+                        sandBg: '#f8fafc',
+                        borderSubtle: '#e2e8f0',
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-sandBg text-slate-600 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full z-40 bg-white/90 backdrop-blur-md border-b border-borderSubtle">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="inicio.html" class="text-xl font-semibold tracking-wide text-navyText uppercase flex items-center gap-2">
+                <span class="w-2.5 h-2.5 bg-primaryNavy rounded-full"></span> Dyspo
+            </a>
+            <button id="menu-btn" aria-label="Abrir menú" class="text-primaryNavy text-xl focus:outline-none z-50 bg-blue-50 hover:bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- SLIDE-OUT MENU -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-slate-900/30 z-50 opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-sm"></div>
+    <div id="mobile-menu" class="fixed top-0 right-0 w-80 h-full bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-8">
+        <div class="flex items-center justify-between pb-6 border-b border-borderSubtle">
+            <span class="text-lg font-semibold tracking-wide text-navyText uppercase flex items-center gap-2">
+                <span class="w-2 h-2 bg-primaryNavy rounded-full"></span> Menú
+            </span>
+            <button id="menu-close" aria-label="Cerrar menú" class="text-slate-400 hover:text-primaryNavy text-xl focus:outline-none">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-6 mt-8 text-base font-normal">
+            <a href="inicio.html" class="text-slate-500 hover:text-primaryNavy hover:translate-x-1 transition-transform flex items-center gap-3">
+                <i class="fa-solid fa-house text-xs"></i> Inicio
+            </a>
+            <a href="producto.html" class="text-slate-500 hover:text-primaryNavy hover:translate-x-1 transition-transform flex items-center gap-3">
+                <i class="fa-solid fa-box-open text-xs"></i> Producto
+            </a>
+            <a href="galeria.html" class="text-primaryNavy font-medium hover:translate-x-1 transition-transform flex items-center gap-3">
+                <i class="fa-solid fa-images text-xs"></i> Galería
+            </a>
+        </nav>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="pt-36 pb-20 px-6 max-w-4xl mx-auto flex-1 w-full space-y-12">
+        
+        <div class="text-center space-y-2">
+            <span class="text-xs font-medium tracking-wider text-primaryNavy uppercase bg-blue-50 px-3 py-1.5 rounded-md">Evolución Visual</span>
+            <h1 class="text-2xl md:text-3xl font-semibold text-navyText">Galería del Proyecto</h1>
+            <p class="text-slate-500 text-sm">Explora los bocetos, prototipos y la versión final de la propuesta.</p>
+        </div>
+
+        <!-- CARRUSEL 1: BOCETOS -->
+        <div class="bg-white rounded-3xl p-6 md:p-10 shadow-sm border border-borderSubtle space-y-4 relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-cyan-500"></div>
+            <h2 class="text-lg font-semibold text-navyText">1. Bocetos y Conceptualización</h2>
+            <div class="relative overflow-hidden rounded-2xl bg-slate-900 border border-borderSubtle carousel-container" data-carousel-id="bocetos">
+                <div class="carousel-track flex transition-transform duration-500 ease-out">
+                    <div class="min-w-full h-72 md:h-96 flex items-center justify-center bg-slate-900 p-2">
+                        <img src="boceto1.jpeg" alt="Boceto 1" class="max-w-full max-h-full object-contain rounded-lg">
+                    </div>
+                    <div class="min-w-full h-72 md:h-96 flex items-center justify-center bg-slate-900 p-2">
+                        <img src="boceto2.jpeg" alt="Boceto 2" class="max-w-full max-h-full object-contain rounded-lg">
+                    </div>
+                    <div class="min-w-full h-72 md:h-96 flex items-center justify-center bg-slate-900 p-2">
+                        <img src="boceto3.jpeg" alt="Boceto 3" class="max-w-full max-h-full object-contain rounded-lg">
+                    </div>
+                </div>
+                <button aria-label="Anterior" class="prev-btn absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 border border-borderSubtle flex items-center justify-center text-primaryNavy hover:bg-primaryNavy hover:text-white transition-all shadow-sm"><i class="fa-solid fa-chevron-left text-xs"></i></button>
+                <button aria-label="Siguiente" class="next-btn absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 border border-borderSubtle flex items-center justify-center text-primaryNavy hover:bg-primaryNavy hover:text-white transition-all shadow-sm"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+            </div>
+            <p class="text-xs text-slate-400 italic text-center">Exploración gráfica inicial enfocada en resolver problemas de agarre y accesibilidad.</p>
+        </div>
+
+        <!-- CARRUSEL 2: PROTOTIPADO -->
+        <div class="bg-white rounded-3xl p-6 md:p-10 shadow-sm border border-borderSubtle space-y-4 relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-cyan-500"></div>
+            <h2 class="text-lg font-semibold text-navyText">2. Prototipado y Pruebas</h2>
+            <div class="relative overflow-hidden rounded-2xl bg-slate-900 border border-borderSubtle carousel-container" data-carousel-id="prototipos">
+                <div class="carousel-track flex transition-transform duration-500 ease-out">
+                    <div class="min-w-full h-72 md:h-96 flex items-center justify-center bg-slate-900 p-2">
+                        <img src="prototipo1.jpg" alt="Prototipo 1" class="max-w-full max-h-full object-contain rounded-lg">
+                    </div>
+                    <div class="min-w-full h-72 md:h-96 flex items-center justify-center bg-slate-900 p-2">
+                        <img src="prototipo2.jpg" alt="Prototipo 2" class="max-w-full max-h-full object-contain rounded-lg">
+                    </div>
+                    <div class="min-w-full h-72 md:h-96 flex items-center justify-center bg-slate-900 p-2">
+                        <img src="prototipo3.jpg" alt="Prototipo 3" class="max-w-full max-h-full object-contain rounded-lg">
+                    </div>
+                </div>
+                <button aria-label="Anterior" class="prev-btn absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 border border-borderSubtle flex items-center justify-center text-primaryNavy hover:bg-primaryNavy hover:text-white transition-all shadow-sm"><i class="fa-solid fa-chevron-left text-xs"></i></button>
+                <button aria-label="Siguiente" class="next-btn absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 border border-borderSubtle flex items-center justify-center text-primaryNavy hover:bg-primaryNavy hover:text-white transition-all shadow-sm"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+            </div>
+            <p class="text-xs text-slate-400 italic text-center">Maquetas y modelos a escala para probar la interacción física con usuarios reales.</p>
+        </div>
+
+        <!-- CARRUSEL 3: VERSIÓN FINAL -->
+        <div class="bg-white rounded-3xl p-6 md:p-10 shadow-sm border border-borderSubtle space-y-4 relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-cyan-500"></div>
+            <h2 class="text-lg font-semibold text-navyText">3. Versión Final del Prototipo</h2>
+            <div class="relative overflow-hidden rounded-2xl bg-slate-900 border border-borderSubtle carousel-container" data-carousel-id="final">
+                <div class="carousel-track flex transition-transform duration-500 ease-out">
+                    <div class="min-w-full h-72 md:h-96 flex items-center justify-center bg-slate-900 p-2">
+                        <img src="foto1.jpeg" alt="Vista general" class="max-w-full max-h-full object-contain rounded-lg">
+                    </div>
+                    <div class="min-w-full h-72 md:h-96 flex items-center justify-center bg-slate-900 p-2">
+                        <img src="foto2.jpeg" alt="Detalle de boquilla" class="max-w-full max-h-full object-contain rounded-lg">
+                    </div>
+                    <div class="min-w-full h-72 md:h-96 flex items-center justify-center bg-slate-900 p-2">
+                        <img src="foto3.jpeg" alt="Perspectiva lateral" class="max-w-full max-h-full object-contain rounded-lg">
+                    </div>
+                </div>
+                <button aria-label="Anterior" class="prev-btn absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 border border-borderSubtle flex items-center justify-center text-primaryNavy hover:bg-primaryNavy hover:text-white transition-all shadow-sm"><i class="fa-solid fa-chevron-left text-xs"></i></button>
+                <button aria-label="Siguiente" class="next-btn absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 border border-borderSubtle flex items-center justify-center text-primaryNavy hover:bg-primaryNavy hover:text-white transition-all shadow-sm"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+            </div>
+            <p class="text-xs text-slate-400 italic text-center">Fotografías del modelo físico funcional del sistema doméstico inteligente.</p>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-6 text-xs text-slate-400 border-t border-borderSubtle bg-white">
+        &copy; 2026 - Proyecto de Diseño Industrial | UACJ
+    </footer>
+
+    <script>
+        // Menú
+        const menuBtn = document.getElementById('menu-btn');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        function toggleMenu() {
+            const isOpen = mobileMenu.classList.contains('translate-x-full');
+            if (isOpen) {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none');
+            }
+        }
+        menuBtn.addEventListener('click', toggleMenu);
+        menuClose.addEventListener('click', toggleMenu);
+        mobileMenuOverlay.addEventListener('click', toggleMenu);
+
+        // Carruseles independientes
+        document.querySelectorAll('.carousel-container').forEach(container => {
+            const inner = container.querySelector('.carousel-track');
+            const prevBtn = container.querySelector('.prev-btn');
+            const nextBtn = container.querySelector('.next-btn');
+            const slides = inner.querySelectorAll('.min-w-full');
+            let index = 0;
+            const total = slides.length;
+
+            function update() {
+                inner.style.transform = `translateX(-${index * 100}%)`;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                index = (index + 1) % total;
+                update();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                index = (index - 1 + total) % total;
+                update();
+            });
+        });
+    </script>
+</body>
+</html>
